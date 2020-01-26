@@ -1,0 +1,20 @@
+create car physics
+  -movement - left, right, forward, backwards
+  -momentum
+  -press multiple keys at same time
+
+car sensor
+  -ray casting
+  -get position of collision with ray. Use that to find the distance from car
+  -8 sensors, 5 front, 3 back
+
+map
+  -start off by creating a starter map, that can be used to train on. Hard Coded In
+  -ADVANCED
+  -create your own map, by creating a wall block if you click on a pixel
+  -checkpoints created by drawing them in
+  -finish line
+
+machine learning
+  -q learning
+  -neat learning

@@ -20,7 +20,7 @@ epsilon_decay_value = epsilon/(END_EPSILON_DECAYING - START_EPSILON_DECAYING)
 
 DISCRETE_OS_SIZE = [20] * len(env.observation_space.high)
 discrete_os_win_size = (env.observation_space.high - env.observation_space.low) / DISCRETE_OS_SIZE
-
+print(DISCRETE_OS_SIZE + [env.action_space.n])
 q_table = np.random.uniform(low=-2, high=0, size=(DISCRETE_OS_SIZE + [env.action_space.n]))
 
 ep_rewards = []

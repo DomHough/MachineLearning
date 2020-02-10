@@ -8,23 +8,22 @@ from keras.layers import Dense
 from keras.optimizers import Adam
 
 class DQNCartPoleSolver():
-    def __init__(self, n_episodes=10000, n_win_ticks=195, max_env_steps=None, gamma=1.0, epsilon=1.0, epsilon_min=0.01, epsilon_log_decay=0.995, alpha=0.01, alpha_decay=0.01, batch_size=64, monitor=False, quiet=False):
+    def __init__(self):
         self.memory = deque(maxlen=100000)
         self.env = gym.make('CartPole-v0')
+        monitor = False
         if monitor:
             self.env = gym.wrappers.Monitor(self.env, '../data/cartpole-1', force=True)
-        self.gamma = gamma
-        self.epsilon = epsilon
-        self.epsilon_min = epsilon_min
-        self.epsilon_decay = epsilon_log_decay
-        self.alpha = alpha
-        self.alpha_decay = alpha_decay
-        self.n_episodes = n_episodes
-        self.n_win_ticks = n_win_ticks
-        self.batch_size = batch_size
-        self.quiet = quiet
-        if max_env_steps is not None:
-             self.env._max_episode_steps = max_env_steps
+        self.gamma = 1.0
+        self.epsilon = 1.0
+        self.epsilon_min = 0.01
+        self.epsilon_decay = 0.995
+        self.alpha = 0.01
+        self.alpha_decay = 0.01
+        self.n_episodes = 10000
+        self.n_win_ticks = 195
+        self.batch_size = 64
+        self.quiet = False
 
         # Init model
         self.model = Sequential()

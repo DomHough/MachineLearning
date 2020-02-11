@@ -95,7 +95,6 @@ if start_q_table is None:
 else:
     with open(start_q_table, "rb") as f:
         q_table = pickle.load(f)
-print(q_table)
 
 
 # can look up from Q-table with: print(q_table[((-9, -2), (3, 9))]) for example
@@ -119,6 +118,7 @@ for episode in range(HM_EPISODES):
         #print(obs)
         if np.random.random() > epsilon:
             # GET THE ACTION
+            print(obs)
             action = np.argmax(q_table[obs])
         else:
             action = np.random.randint(0, 4)

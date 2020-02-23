@@ -118,7 +118,6 @@ for episode in range(HM_EPISODES):
         #print(obs)
         if np.random.random() > epsilon:
             # GET THE ACTION
-            print(obs)
             action = np.argmax(q_table[obs])
         else:
             action = np.random.randint(0, 4)

@@ -1,9 +1,4 @@
-import gym
-import numpy as np
-import random
+a = 1.32
 
-env = gym.make('MountainCar-v0')
-
-
-for i in range(10):
-    print(np.random.randint(env.action_space.n))
+a = int(a)
+print(a)

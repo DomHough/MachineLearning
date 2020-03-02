@@ -46,6 +46,7 @@ for episode in range(EPISODES):
         else:
             action = np.random.randint(0, env.action_space.n)
         new_state, reward, done, _ = env.step(action)
+        print(new_state)
         episode_reward += reward
         new_discrete_state = get_discrete_state(new_state)
         if render:
